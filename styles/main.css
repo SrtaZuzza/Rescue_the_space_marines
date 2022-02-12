@@ -1,0 +1,245 @@
+:root {
+	--sky: #052c46;
+	--plum: #400511;
+	--ground: #2a1723;
+	--light: #f2dbc0;
+	--orange: #f36a17;
+	--shadow: rgba(0,0,0,.6);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: Titulo;
+	src: url(../fonts/PressStart2P-Regular.ttf);
+}
+
+@font-face {
+	font-family: Corpo;
+	src: url(../fonts/monogram_extended.ttf);
+}
+
+/* -------------------------------------------- Body -- */
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-image: linear-gradient(var(--sky), var(--ground));
+	overflow: hidden;
+	font-family: Corpo;
+	font-size: 32px;
+}
+
+a {
+	text-decoration: none;
+	color: var(--light);
+}
+
+h1 {
+	font-family: Titulo;
+	font-size: 40px;
+	color: var(--plum);
+}
+
+h2 {
+	font-family: Titulo;
+	font-size: 30px;
+	color: var(--light);
+}
+
+h3, .start {
+	font-family:Titulo;
+	font-size:20px;
+	color: var(--plum);
+}
+
+ul {
+	list-style-type: none;
+}
+
+.fundo-game {
+	position: absolute;
+	height:auto;
+	display: flex;
+	min-height: 100vh; /* viewport height */
+	align-items: center;
+	padding: 0%;
+}
+
+#frontLayer {
+	background: url(../images/foreground.png) repeat-x bottom / auto 100%;
+}
+
+#middleLayer {
+	background: url(../images/back-buildings.png) repeat-x top / auto 100%;
+}
+
+#farLayer {
+	background: url(../images/far-buildings.png) repeat-x top / auto 100%;
+}
+
+/* -------------------------------------------- HUD -- */
+
+.btn {
+	color: var(--light)!important;
+	background-color: var(--plum);
+}
+
+#inicio {  /* div completa */
+	width: 100vw;
+	height: 100vh;
+	background: var(--shadow);
+    backdrop-filter: blur(2px) saturate(150%);
+}
+
+.inicio { /* dialogo */
+	background-color: var(--light);
+	width: 400px;
+	margin-left: auto;
+    margin-right: auto;
+ 	margin-top: 8%;
+	padding: 10px;
+}
+
+#fim {
+	background-color: var(--light);
+ 	margin-left: auto;
+    margin-right: auto;
+ 	margin-top: 8%;
+	text-align: center;
+	padding: 10px;
+}
+
+.key {
+	background-color: var(--orange);
+	color: var(--light);
+	padding: 6px 15px;
+	margin: 10px;
+	border-radius: 3px;
+}
+
+#placar {
+	width: 100%;
+	height: 4vw;
+	margin: auto;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	z-index: 9999;
+}
+
+.credits {
+	/* Title font - Monogram by Datagoblin
+	Body font - PressStart2P by Codeman38
+	Art and main music by Ansimuz
+	Developed by SrtaZuzza */
+	position: absolute;
+	bottom: 5vh;
+	right: 25vh;
+}
+
+/* -------------------------------------------- Characters -- */
+
+#jogador {
+	width: 10vw;
+	height: 20vh;
+	position: absolute;
+	left: 5vw;
+	top: 5vh;
+}
+
+#jogador img {
+	margin-top: -25%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	width: 20vw;
+	height: auto;
+}
+
+#inimigo1 {
+	width: 10vw;
+	height: 20vh;
+	position: absolute;
+	left: 100vw;
+	top: 5vh;
+}
+
+#inimigo1 img {
+	margin-top: -40%;
+	/* margin-left: 50%;
+	transform: translateX(-50%); */
+	width: 40vw;
+	height: auto;
+}
+
+#inimigo2 {
+	width: 10vw;
+	height: 20vh;
+	position: absolute;
+	left: calc(100vw + 400px);
+	top: calc(95vh - 25vh); /* altura na tela menos altura da imagem */
+}
+
+#inimigo2 img {
+	margin-top: -25%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	width: 25vw;
+	height: auto;
+}
+
+#amigo {
+	width: 10vw;
+	height: 20vh;
+	position: absolute;
+	left: 2.5vw;
+	top: calc(95vh - 15vh); /* altura na tela menos altura da imagem */
+}
+
+#amigo img {
+	margin-left: 50%;
+	transform: translateX(-50%);
+	width: 8vw;
+	height: auto;
+}
+
+#amigoDie {
+	position: absolute;
+}
+
+#amigoDie img {
+	margin-top: -25%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	width: 15vw;
+	height: auto;
+}
+
+/* -------------------------------------------- Elements -- */
+
+#disparo {
+	width: 10vw;
+	height: 10vh;
+	position: absolute;
+	background: url(../images/spark-preview-big.gif) no-repeat left / 100%;
+}
+
+#explosao1 {
+	width: 20vw;
+	height: 33vh;
+	position: absolute;
+  	background: no-repeat left / 100%;
+}
+
+#explosao2 {
+	width: 20vw;
+	height: 33vh;
+	position: absolute;
+ 	background: no-repeat left / 100%;
+}
